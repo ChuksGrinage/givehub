@@ -120,17 +120,24 @@ export default function App() {
 					<Typography variant='h4' align='center'>How it works</Typography>
 				</Grid>
 				<Grid style={{flex: '1'}} spacing={10} container item>
-					<Grid xs={4} item>
+					<Grid xs={3} item>
 						<img style={{ width: '100%' }} src={contactSvg} />
-						<Typography variant='h3'>Contact:</Typography>
-
-						<Typography>Fill out the form and our team will review tha application to seem if the project is a good fit.</Typography>
-						
+						<Typography variant='h3'>Step One: Apply</Typography>
+						<Typography variant='body2'>Fill out the form and our team will review the application to see if the project is a good fit and we will reachout to you with a response.</Typography>
 					</Grid>
-					<Grid xs={4} item>
+					<Grid xs={3} item>
+						<Typography variant='h3'>Step Two: Planning</Typography>
+						<Typography  variant='body2'>We meet up in-person (or online) to better guage your needs and how we can best meet them.</Typography>
 						<img style={{ width: '100%' }} src={presentSvg} />
 					</Grid>
-					<Grid xs={4} item>
+					<Grid xs={3} item>
+						<img style={{ width: '100%' }} src={workSvg} />
+						<Typography variant='h3'>Step Three: Production</Typography>
+						<Typography  variant='body2'>We get started with website and keep you in the loop.</Typography>
+					</Grid>
+					<Grid xs={3} item>
+						<Typography variant='h3'>Step Four: Delivery</Typography>
+						<Typography  variant='body2'>And it's done! Your new site is here and you can now impress all your clients with your flashy new webiste! =)</Typography>
 						<img style={{ width: '100%' }} src={workSvg} />
 					</Grid>
 				</Grid>

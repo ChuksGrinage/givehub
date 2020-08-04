@@ -47,6 +47,12 @@ export default createMuiTheme({
       // color: arcBlue,
       lineHeight: 1.5
 		},
+		h3: {
+			fontFamily: novaMonoFont,
+			textTransform: 'uppercase',
+			color: vividPink,
+			fontSize: '1.5rem'
+		},
 		h4: {
 			fontFamily: novaMonoFont,
 			color: vividPink,
