@@ -16,13 +16,23 @@ import { ContactCard } from 'component';
 
 
 const useStyles = makeStyles(theme => ({
+	root: {
+		flexGrow: 1,
+		
+	},
 	banner: {
-		height: '100vh',
-		paddingTop: '10em'
+		
+		paddingTop: '10em',
+		xs: '12',
+		md: '6',
+		paddingBottom: '18em'
 	},
 	button: {
 		...theme.actionButton,
 		marginTop: '1rem'
+	},
+	item: {
+		paddingBottom: '5rem'
 	},
 	team: {
 		// display: 'flex',
@@ -52,34 +62,37 @@ export default function App() {
 
 	return (
 		<MainLayout>
+			<div className={classes.root}>
 			<Grid className={classes.banner} container>
-				<Grid xs={6} item>
-					<Typography variant='h2'>
+				<Grid xs={12} sm={6} item className={classes.item}>
+					<Typography noWrap variant='h2'>
 						Let's help <br />
 						get your <br />
 						business online!
 					</Typography>
 					<Typography style={{ width: '50%' }} variant='subtitle1'>
-						Welcome to GiveHub a non-profit organization that works to help small businesses establish an online presence!
+						Welcome to GiveHub a local team of developers that works to help small businesses establish an online presence!
 					</Typography>
-					<Button className={classes.button}>Let's Talk!</Button>
+					<Button href="#contact" className={classes.button}>Let's Talk!</Button>
 				</Grid>
-				<Grid xs={6} item>
+				<Grid xs={12} sm={6} item>
 					<img style={{ width: '100%' }} src={websiteSvg} />
 				</Grid>
 			</Grid>
-			<Grid container direction='column' style={{ height: '100vh' }}>
+			</div>
+			<div className={classes.root}>
+			<Grid container direction='column' >
 				<Grid item>
 					<Typography align='center' variant='h4'>Meet The Squad</Typography>
 				</Grid>
 				<Grid item container className={classes.team}>
-					<Grid item xs={4}>
+					<Grid item xs={12} sm={4} className={classes.item}>
 						<ContactCard name='Sherry Yang' title='Front-end Guru' />
 					</Grid>
-					<Grid item xs={4}>
+					<Grid item xs={12} sm={4} className={classes.item}>
 						<ContactCard name='Sherry Yang' title='Front-end Guru' />
 					</Grid>
-					<Grid item xs={4}>
+					<Grid item xs={12} sm={4} className={classes.item}>
 						<ContactCard name='Sherry Yang' title='Front-end Guru' />
 					</Grid>
 					{/* <ContactCard name='Sherry Yang' title='Front-end Guru' />
@@ -87,11 +100,11 @@ export default function App() {
 						<ContactCard name='Sherry Yang' title='Front-end Guru' /> */}
 				</Grid>
 			</Grid>
-			<Grid container direction='column' style={{ height: '100vh' }}>
-				<Grid item>
+			<Grid container direction='column'>
+				<Grid item > 
 					<Typography variant='h4' align='center'>Our Story</Typography>
 				</Grid>
-				<Grid style={{ padding: '0 10em' }} container item direction='column'>
+				<Grid style={{ padding: '0 10em' }}  item className={classes.item}>
 					{/* <Typography variant='body1'>previosuly on GiveHub...</Typography> */}
 					<Typography align='center' variant='body1'>
 						Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
@@ -100,7 +113,9 @@ export default function App() {
 					{/* <Typography>to be continued...</Typography> */}
 				</Grid>
 			</Grid>
-			<Grid container direction='column' style={{ height: '100vh' }}>
+			</div>
+			<div className={classes.root}>
+			<Grid id="#contact" container direction='column' style={{ height: '100vh' }}>
 				<Grid item>
 					<Typography variant='h4' align='center'>How it works</Typography>
 				</Grid>
@@ -119,6 +134,7 @@ export default function App() {
 						<img style={{ width: '100%' }} src={workSvg} />
 					</Grid>
 				</Grid>
+				
 				{/* <Grid item>
 					<Paper style={{ padding: '2em'}} elevation={10}>
 					<Typography variant='h4'>Contact form:</Typography>
@@ -140,6 +156,7 @@ export default function App() {
 						</Paper>
 				</Grid> */}
 			</Grid>
+			</div>
 		</MainLayout>
 	)
 }
