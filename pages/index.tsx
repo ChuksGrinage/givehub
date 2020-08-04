@@ -23,16 +23,14 @@ const useStyles = makeStyles(theme => ({
 	banner: {
 		
 		paddingTop: '10em',
-		xs: '12',
-		md: '6',
-		paddingBottom: '18em'
+		marginBottom: '18em'
 	},
 	button: {
 		...theme.actionButton,
 		marginTop: '1rem'
 	},
 	item: {
-		paddingBottom: '5rem'
+		marginBottom: '5rem'
 	},
 	team: {
 		// display: 'flex',
@@ -101,7 +99,7 @@ export default function App() {
 				</Grid>
 			</Grid>
 			<Grid container direction='column'>
-				<Grid item > 
+				<Grid item style={{marginTop: '5rem'}}> 
 					<Typography variant='h4' align='center'>Our Story</Typography>
 				</Grid>
 				<Grid style={{ padding: '0 10em' }}  item className={classes.item}>
@@ -114,12 +112,13 @@ export default function App() {
 				</Grid>
 			</Grid>
 			</div>
-			<div className={classes.root}>
-			<Grid id="#contact" container direction='column' style={{ height: '100vh' }}>
+			<div id="#contact" className={classes.root}>
+			<Grid  container direction='column' style={{ height: '100vh' }}>
 				<Grid item>
 					<Typography variant='h4' align='center'>How it works</Typography>
 				</Grid>
 				<Grid style={{flex: '1'}} spacing={10} container item>
+<<<<<<< HEAD
 					<Grid xs={3} item>
 						<img style={{ width: '100%' }} src={contactSvg} />
 						<Typography variant='h3'>Step One: Apply</Typography>
@@ -128,8 +127,20 @@ export default function App() {
 					<Grid xs={3} item>
 						<Typography variant='h3'>Step Two: Planning</Typography>
 						<Typography  variant='body2'>We meet up in-person (or online) to better guage your needs and how we can best meet them.</Typography>
-						<img style={{ width: '100%' }} src={presentSvg} />
+=======
+					<Grid xs={12} sm={4} item>
+						<img style={{ width: '100%' }} src={contactSvg} />
+						<Typography variant='h3'>Contact:</Typography>
+
+						<Typography>Fill out the form and our team will review tha application to determine if the project is a good fit.</Typography>
+						
 					</Grid>
+					<Grid xs={12} sm={4} item>
+>>>>>>> c7ac4281f22f8f17482642dc88d26624a9e9a007
+						<img style={{ width: '100%' }} src={presentSvg} />
+						
+					</Grid>
+<<<<<<< HEAD
 					<Grid xs={3} item>
 						<img style={{ width: '100%' }} src={workSvg} />
 						<Typography variant='h3'>Step Three: Production</Typography>
@@ -138,7 +149,11 @@ export default function App() {
 					<Grid xs={3} item>
 						<Typography variant='h3'>Step Four: Delivery</Typography>
 						<Typography  variant='body2'>And it's done! Your new site is here and you can now impress all your clients with your flashy new webiste! =)</Typography>
+=======
+					<Grid xs={12} sm={4} item>
+>>>>>>> c7ac4281f22f8f17482642dc88d26624a9e9a007
 						<img style={{ width: '100%' }} src={workSvg} />
+						<Typography>Our team will <b>prototype</b>, <b>develop</b> and <b>deploy</b> the site on a <b>low cost</b>, <b>zero maintaince</b> platform utilizing <b>modern technologies</b>.</Typography>
 					</Grid>
 				</Grid>
 				
