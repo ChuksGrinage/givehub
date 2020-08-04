@@ -35,6 +35,11 @@ export default createMuiTheme({
 			fontStyle: 'italic',
 			color: white
 		},
+		h3: {
+			fontFamily: novaMonoFont,
+			color: black,
+			fontSize: "3rem",
+		},
 		h5: {
 			fontFamily: novaMonoFont,
 			fontStyle: 'italic',
