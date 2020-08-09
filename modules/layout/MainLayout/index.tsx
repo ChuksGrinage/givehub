@@ -8,6 +8,7 @@ import { Header } from 'component'
 const useStyles = makeStyles(theme => ({
 	mainLayout: {
 		backgroundColor: theme.palette.secondary.main,
+		flexGrow: '1',
 		// color: theme.palette.common.black
 		padding: '0 10rem'
 	}
