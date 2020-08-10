@@ -52,7 +52,7 @@ const Header = () => {
 	// TODO: MAKE NAVIGATION FUNCTIONAL
 	return (
 		<ElevationScroll>
-			<div style={{ flex: '1' }}>
+			<div style={{ flex: '1', padding: '0 10rem' }}>
 				<AppBar elevation={0} position="static" className={classes.header}>
 					<Toolbar style={{ padding: '0' }}>
 						<div style={{ flex: '1', display: 'flex', alignItems: 'center', justifyItems: 'center' }}>

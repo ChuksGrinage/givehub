@@ -3,6 +3,8 @@
 .hoverCard {
 	height: 25em;
 	width: 20em;
+	margin: auto;
+	/* margin: 0; */
 	font-family: 'Nova Mono', monospace;
 	/* position: relative; */
 	/* background-position: center;
@@ -56,7 +58,7 @@
 .title {
 	color: #EE4C7C;
 	margin-top: 1em;
-	margin-left: 5em;
+	/* margin-left: 5em; */
 	text-align: end;
 }
 

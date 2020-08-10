@@ -33,12 +33,7 @@ export default createMuiTheme({
 		h1: {
 			fontFamily: novaMonoFont,
 			fontStyle: 'italic',
-			color: white
-		},
-		h3: {
-			fontFamily: novaMonoFont,
-			color: black,
-			fontSize: "3rem",
+			color: creamish
 		},
 		h5: {
 			fontFamily: novaMonoFont,
@@ -69,20 +64,13 @@ export default createMuiTheme({
 		},
 		h6: {
 			fontFamily: novaMonoFont,
-			color: white,
-		},
-		body1: {
-			// backgroundColor: vividPink,
-			// textTransform: 'uppercase',
-			fontFamily: latoFont,
-			// fontWeight: 'bold',
-			// fontStyle: 'italic',
-			// display: 'inline-block',
-			// transform: 'skew(90deg)'
-			fontSize: '1.5rem'
+			color: creamish,
+			textTransform: 'uppercase'
 		},
 		body2: {
-			// fontSize: '1.5rem'
+			// fontSize: '1.5rem',
+			fontFamily: latoFont,
+			// color: creamish
 		}
   },
 	actionButton: {
@@ -90,7 +78,7 @@ export default createMuiTheme({
 		fontFamily: novaMonoFont,
 		borderRadius: '0',
 		border: `1px solid ${grey['700']}`,
-		color: white,
+		color: creamish,
 		"&:hover": {
       background: vividPink,
       // Reset on touch devices, it doesn't add specificity
@@ -103,12 +91,26 @@ export default createMuiTheme({
 		fontFamily: novaMonoFont,
 		"&:hover": {
 			background: vividPink,
-			color: white,
+			color: creamish,
       // Reset on touch devices, it doesn't add specificity
       "@media (hover: none)": {
         backgroundColor: vividPink,
-				color: white,
+				color: creamish,
       }
+	}
+},
+overrides: {
+	MuiFormLabel: {
+		root: {
+			color: black,
+			fontFamily: novaMonoFont,
+			"&:focused": {
+				color: black
+			}
+		},
+		focused: {
+			color: black
+		}
 	}
 }
 });

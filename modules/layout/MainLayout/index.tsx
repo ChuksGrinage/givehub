@@ -2,15 +2,13 @@ import React from 'react';
 import { makeStyles } from "@material-ui/styles";
 import Grid from "@material-ui/core/Grid"
 
-import { Header } from 'component'
+import { Header, Footer } from 'component'
 
 
 const useStyles = makeStyles(theme => ({
 	mainLayout: {
 		backgroundColor: theme.palette.secondary.main,
-		flexGrow: '1',
-		// color: theme.palette.common.black
-		padding: '0 10rem'
+		flexGrow: '1'
 	}
 }));
 
@@ -21,8 +19,11 @@ export default ({ children }) => {
 			<Grid item>
 				<Header />
 			</Grid>
-			<Grid item>
+			<Grid style={{ padding: '0 10em'}} item>
 				{children}
+			</Grid>
+			<Grid item>
+				<Footer />
 			</Grid>
 		</Grid>
 	)
