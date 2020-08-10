@@ -1,11 +1,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap'); */
 
 .hoverCard {
-	height: 25em;
+	height: 20em;
 	width: 20em;
 	margin: auto;
 	/* margin: 0; */
 	font-family: 'Nova Mono', monospace;
+	display: 'inline';
 	/* position: relative; */
 	/* background-position: center;
 	background-size: cover;
@@ -33,6 +34,7 @@
 	box-shadow: 28px 28px 0px 0px rgba(238,76,124,0.5);
 	/* z-index: 10; */
 	transition: all .3s;
+	display: 'inline';
 }
 
 /* .contactSide {

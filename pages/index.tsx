@@ -16,8 +16,11 @@ import websiteSvg from 'assets/website.svg';
 import presentSvg from 'assets/present.svg';
 import contactSvg from 'assets/contact.svg';
 import workSvg from 'assets/work.svg';
+import chuks from 'assets/chuks.jpeg';
+import vivek from 'assets/vivek.jpeg';
+import sherry from 'assets/sherry.jpeg';
 import { MainLayout } from 'layout'
-import { ContactCard } from 'component';
+import { ContactCard , Form} from 'component';
 
 import DoneIcon from '@material-ui/icons/Done';
 
@@ -86,14 +89,14 @@ export default function App() {
 					<Typography align='center' variant='h4'>Meet The Squad</Typography>
 				</Grid>
 				<Grid spacing={10} item container className={classes.team}>
-					<Grid item xs={6}>
-						<ContactCard name='Sherry Yang' title='Front-end Guru' />
+					<Grid item xs={12} sm={12} md={4} className={classes.item}>
+						<ContactCard name='Front-End Guru' title='Chuks Grinage' img={chuks}/>
 					</Grid>
-					<Grid item xs={6}>
-						<ContactCard name='Sherry Yang' title='Front-end Guru' />
+					<Grid item xs={12} sm={12} md={4} className={classes.item}>
+						<ContactCard name='Dev Unicorn' title='Sherry Yang' img={sherry}/>
 					</Grid>
-					<Grid item xs={12}>
-						<ContactCard name='Sherry Yang' title='Front-end Guru' />
+					<Grid item xs={12} sm={12} md={4} className={classes.item}>
+						<ContactCard name='Back-End Sensei' title='Vivek Puttaparthi' img={vivek}/>
 					</Grid>
 				</Grid>
 			</Grid>
@@ -105,8 +108,11 @@ export default function App() {
 				</Grid>
 				<Grid className={classes.ourStory} spacing={5} direction='column' item container>
 					<Grid xs item>
-						<Typography align='center' className={classes.ourStoryText}>
-								Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+						<Typography align='center' className={classes.ourStoryText} variant='body1'>
+					<b>GiveHub</b> is a team of <b>Dallasite web developers</b> who love their city and want to <b>give back to our community </b>in the most <b>21st century</b> way. 
+					We know our community is great at what they do, as a local shop, small business or community center. 
+					We understand that today's challenges wont be the same as tommorrow's in this ever changing digital age.
+					That's why we want to lend a hand (<i>or three</i>) in these tough times and help you keep doing what you do best.
 						</Typography>
 					</Grid>
 					<Grid xs item>

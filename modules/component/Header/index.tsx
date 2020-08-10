@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { makeStyles } from '@material-ui/core/styles';
 
-const links = ['Home', 'Portfolio', 'About Us', 'Contact Us']
+const links = ['Home', 'Apply', 'About Us', 'Contact Us']
 
 function ElevationScroll(props) {
 	const { children } = props;
