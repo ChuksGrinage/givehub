@@ -20,7 +20,7 @@ import chuks from 'assets/chuks.jpeg';
 import vivek from 'assets/vivek.jpeg';
 import sherry from 'assets/sherry.jpeg';
 import { MainLayout } from 'layout'
-import { ContactCard , Form} from 'component';
+import { ContactCard, Form } from 'component';
 
 import DoneIcon from '@material-ui/icons/Done';
 
@@ -56,12 +56,17 @@ const useStyles = makeStyles(theme => ({
 
 // style={{ padding: '2em', height: '50em' }}
 
-export default function App() {
+export default function App(isWebsite, submission) {
 	const { register, handleSubmit, errors } = useForm();
 	const classes = useStyles();
 
-	function onSubmit(data) {
-		console.log(data)
+	async function onSubmit(data) {
+		await console.log(data);
+		if (data) {
+			submission
+		} else {
+			!submission
+		}
 	}
 
 	return (
@@ -90,13 +95,13 @@ export default function App() {
 				</Grid>
 				<Grid spacing={10} item container className={classes.team}>
 					<Grid item xs={12} sm={12} md={4} className={classes.item}>
-						<ContactCard name='Front-End Guru' title='Chuks Grinage' img={chuks}/>
+						<ContactCard name='Front-End Guru' title='Chuks Grinage' img={chuks} />
 					</Grid>
 					<Grid item xs={12} sm={12} md={4} className={classes.item}>
-						<ContactCard name='Dev Unicorn' title='Sherry Yang' img={sherry}/>
+						<ContactCard name='Dev Unicorn' title='Sherry Yang' img={sherry} />
 					</Grid>
 					<Grid item xs={12} sm={12} md={4} className={classes.item}>
-						<ContactCard name='Back-End Sensei' title='Vivek Puttaparthi' img={vivek}/>
+						<ContactCard name='Back-End Sensei' title='Vivek Puttaparthi' img={vivek} />
 					</Grid>
 				</Grid>
 			</Grid>
@@ -109,8 +114,8 @@ export default function App() {
 				<Grid className={classes.ourStory} spacing={5} direction='column' item container>
 					<Grid xs item>
 						<Typography align='center' className={classes.ourStoryText} variant='body1'>
-					<b>GiveHub</b> is a team of <b>Dallasite web developers</b> who love their city and want to <b>give back to our community </b>in the most <b>21st century</b> way. 
-					We know our community is great at what they do, as a local shop, small business or community center. 
+							<b>GiveHub</b> is a team of <b>Dallasite web developers</b> who love their city and want to <b>give back to our community </b>in the most <b>21st century</b> way.
+					We know our community is great at what they do, as a local shop, small business or community center.
 					We understand that today's challenges wont be the same as tommorrow's in this ever changing digital age.
 					That's why we want to lend a hand (<i>or three</i>) in these tough times and help you keep doing what you do best.
 						</Typography>
@@ -131,21 +136,30 @@ export default function App() {
 					<Grid item xs>
 						<Paper className={classes.form} elevation={10}>
 							<form style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'space-between' }} onSubmit={handleSubmit(onSubmit)}>
-								<TextField className={classes.formInput} id='firstName' label='First Name' variant='outlined' />
-								<TextField className={classes.formInput} id='lastName' label='Last Name' variant='outlined' />
-								<TextField className={classes.formInput} id='email' label='Email' variant='outlined' />
-								<TextField className={classes.formInput} type='phone number' id='phone' label='Phone Number' variant='outlined' />
+								{Object.entries(errors).map(([key, error]) => (
+									<>
+										<small style={{ fontSize: "1rem", color: 'red' }}>{error.message}</small>
+										<br />
+									</>
+								))}
+								<TextField className={classes.formInput} name='firstName' id='firstName' label='First Name' variant='outlined' inputRef={register({ required: 'First name is required' })} />
+								<TextField className={classes.formInput} name='lastName' id='lastName' label='Last Name' variant='outlined' inputRef={register({ required: 'Last name is required' })} />
+								<TextField className={classes.formInput} name='email' type="email" id='email' label='Email' variant='outlined' inputRef={register({ required: 'Email is required' })} />
+								<TextField className={classes.formInput} name='phone' type='number' id='phone' label='Phone Number' variant='outlined' inputRef={register({ required: 'Phone number is required' })} />
 								<FormControl component="fieldset">
 									<FormLabel component="legend">Do you already have a website?</FormLabel>
-									<RadioGroup defaultValue='no' aria-label="website" name="website">
-										<FormControlLabel value="no" control={<Radio />} label="No" />
-										<FormControlLabel value="yes" control={<Radio />} label="Yes" />
+									<RadioGroup defaultValue='no' aria-label="website" name="website" >
+
+										<FormControlLabel {...isWebsite === false} value="no" control={<Radio />} label="No" inputRef={register} />
+										<FormControlLabel {...isWebsite === true} value="yes" control={<Radio />} label="Yes" inputRef={register} />
+
 									</RadioGroup>
 								</FormControl>
-								<TextField disabled className={classes.formInput} id='website' label='Website' variant='outlined' />
+								{isWebsite ? (<TextField className={classes.formInput} name='website' id='website' label='Website' variant='outlined' inputRef={register} />) : (<div></div>)}
+								<TextField inputRef={register({ required: "info required" })} label='Description' multiline rows={5} type="text" placeholder='Description' name='description' id='description' />
 								<Button type='submit' className={classes.button}>Submit</Button>
 								<DoneIcon color='palette.success' fontSize='large' />
-								<Typography align='center' variant='h5'>Submission successful! Thank You!</Typography>
+								{submission ? (<Typography align='center' variant='h5'>Submission successful! Thank You!</Typography>) : (<Typography >Try Again </Typography>)}
 							</form>
 						</Paper>
 					</Grid>
