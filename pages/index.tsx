@@ -15,6 +15,7 @@ import TextField from '@material-ui/core/TextField';
 import websiteSvg from 'assets/website.svg';
 import presentSvg from 'assets/present.svg';
 import contactSvg from 'assets/contact.svg';
+import finishedSvg from 'assets/finished.svg';
 import workSvg from 'assets/work.svg';
 import chuks from 'assets/chuks.jpeg';
 import vivek from 'assets/vivek.jpeg';
@@ -185,10 +186,10 @@ export default function App() {
 						<Grid spacing={5} alignItems='center' xs item container>
 							<Grid xs item>
 								<Typography variant='h3'>Step Four: Delivery</Typography>
-								<Typography variant='body2'>And it's done! Your new site is here and you can now impress all your clients with your flashy new webiste! =)</Typography>
+								<Typography variant='body2'>And it's done! Your new site is here and you can now impress all your clients with your new webiste!</Typography>
 							</Grid>
 							<Grid xs item>
-								<img style={{ width: '100%' }} src={workSvg} />
+								<img style={{ width: '100%' }} src={finishedSvg} />
 							</Grid>
 						</Grid>
 					</Grid>

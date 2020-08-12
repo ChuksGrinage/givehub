@@ -104,9 +104,7 @@ overrides: {
 		root: {
 			color: black,
 			fontFamily: novaMonoFont,
-			"&:focused": {
-				color: black
-			}
+			
 		},
 		focused: {
 			color: black
